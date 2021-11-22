@@ -1,0 +1,173 @@
+.poster-container{
+    width: 0vw;
+    height: 4vw;
+    position: absolute;
+    top: calc(50% - 25vh);
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.button-poster{
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(255, 255, 255,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+
+}
+
+.logo-mel{
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.logo-mel img{
+    width: 4vw;
+    height: 4vw;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.logo-insta{
+    width: 0vw;
+    height: 0vw;
+    position: absolute;
+    left: 4vw;
+    top: 0;
+    display: none;
+}
+.logo-insta a img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    left: 8vw;
+    bottom: 0.5vw;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    opacity: 0;
+    display: none;
+}
+.logo-insta .insta-mel{
+    width: 10vw;
+    height: 6vw;
+    position: absolute;
+    left: 0vw;
+    top: 0;
+    display: none;
+    
+}
+.poster{
+    width: 0vw;
+    height: 0vh;
+    position: absolute;
+    left: 4vw;
+    top:4vw;    
+}
+.poster img{
+    width: 100%;
+    height: 100%;
+}
+
+/*########################### ANIMATIONS ###########################*/
+.poster-container:hover,
+.poster-container:hover .logo-insta a img,
+.poster-container:hover .button-poster,
+.poster-container:hover .poster{
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+#target-spirited-away:target .poster-container,
+#target-princess-mononoke:target .poster-container,
+#target-chateau-ambulant:target .poster-container {
+	animation: button-slide 1s;
+	animation-fill-mode: both;
+	animation-delay: 1.5s;
+}
+@keyframes button-slide{
+	from{
+		opacity: 0;
+	}
+	to{
+		opacity: 1;
+		}
+}
+.poster-container:hover{
+    animation-name: poster;
+    animation-duration: 2s;
+	animation-delay: 0s;
+}
+@keyframes poster{
+    0%{
+        width: 4vw;
+        height: 4vw;
+    }50%{
+        width: 22vw;
+        height: 4vw;
+    }100%{
+        width: 22vw;
+        height: 58vh;
+    }
+}
+
+.poster-container:hover .logo-insta a img{
+    animation-name: poster-insta;
+    animation-duration: 1s;
+	animation-delay: 1.5s;
+}
+@keyframes poster-insta{
+    to{
+        display: block;
+        opacity: 1;
+    }
+}
+
+.poster-container:hover .button-poster{
+    animation-name: poster-button;
+    animation-duration: 1s;
+	animation-delay: 0.5s;
+}
+@keyframes poster-button{
+    from{
+        width: 4vw;
+        height: 4vw;
+        border-bottom-right-radius: 5px;
+    }to{
+        width: 22vw;
+        height: 4vw;
+        border-bottom-right-radius: 0px;
+    }
+}
+
+.poster-container:hover .poster{
+    animation-name: poster-img;
+    animation-duration: 2s;
+	animation-delay: 0.5s;
+}
+@keyframes poster-img{
+    0%{
+        width: 0vw;
+        height: 0vw;
+    }50%{
+        width: 18vw;
+        height: 0vw;
+    }100%{
+        width: 18vw;
+        height: 50vh;
+    }
+}

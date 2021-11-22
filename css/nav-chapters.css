@@ -1,0 +1,133 @@
+#section-chapters{
+	width: 100vw;
+	height: 10vh;
+	position: sticky;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	top:0;
+	left:0;
+	bottom:5vh;
+	z-index: 4;
+}
+div a.button-chapters{
+	height: 80%;
+	width: 25%;
+	background-color: rgba(255, 255, 255, 0.85);
+	color: rgb(0, 0, 0);
+	font-size: 24px;
+	text-align: center;
+	text-decoration: none;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: 40px;
+	border: 0px solid black;
+	margin: 30px;
+	font-family: "Ghibli Regular";
+	user-select: none;
+    box-shadow: 5px 5px 17px 5px #3a3a3a;
+}
+
+
+.nav-title{
+	position:absolute;
+	color: rgba(23,23,23,1);
+	font-size: 18px;
+	/*transition: width ease-out 1s;*/
+}
+.nav-description{
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	width: 200px;
+	height: 0px;
+	color: rgba(23,23,23,0);
+	position:absolute;
+	font-size: 16px;
+	
+}
+a .divider{
+	width: 0%;
+	height: 3px;
+	position:absolute;
+	background-color: rgba(23,23,23,1);
+}
+
+/*########################### ANIMATIONS ###########################*/
+#button-chapter1, #button-chapter2, #button-chapter3{
+    animation-name: nav-button-apparition;
+    animation-duration: 1s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+	animation-delay: 1s;
+}
+#button-chapter1{
+	animation-delay: 1.25s;
+}
+#button-chapter2{
+	animation-delay: 1.50s;
+}
+#button-chapter3{
+	animation-delay: 1.75s;
+}
+@keyframes nav-button-apparition {
+    0% {
+        transform-origin: 50% 50%;
+        transform: scale(0.0, 0.0);
+        margin-top: 100px;
+    }
+    65% {
+        transform-origin: 50% 50%;
+        transform: scale(0.0, 0.0);
+        margin-top: 0;
+    }
+    100% {
+        transform-origin: 50% 50%;
+        transform: scale(1, 1);
+    }
+}
+
+.button-chapters:hover .nav-title,
+.button-chapters:hover .nav-description,
+.button-chapters:hover .divider{
+	animation-duration: 0.5s;
+    animation-direction: normal;
+    animation-iteration-count: 1;
+    animation-fill-mode: both;
+}
+
+.button-chapters:hover .nav-title{	
+	animation-name: nav-title;
+	animation-delay: 0s;
+}
+@keyframes nav-title { 
+	from{
+		height: 25%;
+	}
+	to{
+		height: 55%;
+	}
+}
+.button-chapters:hover .nav-description{
+	animation-name: nav-desc;
+
+	animation-delay: 0.5s;
+}
+@keyframes nav-desc { 
+	to{
+		color: rgba(23,23,23,1);
+	}
+}
+.button-chapters:hover .divider{
+	animation-name: divider;
+	animation-delay: 0.5s;
+}
+@keyframes divider { 
+	
+	100%{
+		width: 15%;
+	
+	}
+}
